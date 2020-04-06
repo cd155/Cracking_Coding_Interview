@@ -2,8 +2,6 @@
 # Implement an algorithm to determine if a string has all unique characters. 
 # What if you cannot use additional data structures?
 
-test_array = ["algorithm", "", "additional", "h", "2020", "DonaldTrump", "Tt", "12ad好"]
-
 def is_unique_hash(test_string):
     dict_table = {}
     for char in test_string:
@@ -27,11 +25,12 @@ def is_unique_array(test_string):
     return False
 
 def is_unique_bit_array(test_string):
-    # check the following if you have some trouble to understand the bit vector solution
+    # check the following if you have some troubles to understand the bit vector solution
     # https://stackoverflow.com/questions/9141830/explain-the-use-of-a-bit-vector-for-determining-if-all-characters-are-unique
     pass
 
 # for test only
+test_array = ["algorithm", "", "additional", "h", "2020", "DonaldTrump", "Tt", "12ad好"]
 for test_string in test_array:
     if is_unique_hash(test_string):
         print ("Hash: Find the duplicate in " + test_string)
