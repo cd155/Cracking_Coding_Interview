@@ -8,25 +8,23 @@ def is_unique_hash(test_string):
     dict_table = {}
     for char in test_string:
         if char in dict_table:
-            print ("Hash: Find the duplicate in " + test_string)
-            return
+            return True
         else:
             dict_table[char] = True
-    print ("Hash: No duplicate in " + test_string)
+    return False
 
 def is_unique_array(test_string):
     bool_array = [False] * 128
     for char in test_string:
         if ord(char) > 128:
             print ("Array: Out of Assumption in " + test_string)
-            return
+            return False
 
         if bool_array[ord(char)]:
-            print ("Array: Find the duplicate in " + test_string)
-            return
+            return True
         else:
             bool_array[ord(char)] = True
-    print ("Array: No duplicate in " + test_string)
+    return False
 
 def is_unique_bit_array(test_string):
     # check the following if you have some trouble to understand the bit vector solution
@@ -35,5 +33,12 @@ def is_unique_bit_array(test_string):
 
 # for test only
 for test_string in test_array:
-    is_unique_hash(test_string)
-    is_unique_array(test_string)
+    if is_unique_hash(test_string):
+        print ("Hash: Find the duplicate in " + test_string)
+    else:
+        print ("Hash: No duplicate in " + test_string)
+
+    if is_unique_array(test_string):
+        print ("Array: Find the duplicate in " + test_string)
+    else:
+        print ("Array: No duplicate in " + test_string)
