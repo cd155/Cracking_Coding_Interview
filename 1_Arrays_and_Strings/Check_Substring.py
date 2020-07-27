@@ -21,8 +21,8 @@ def pair_string(string_long, string_short):
 test_arrays = [["abbcaaade","aaa"],["",""],["thisis","is"],["","ab"],["a","b"]]
 for item in test_arrays:
     if check_substring(item[0],item[1]):
-        print (item)
-        print ("has permutation")
+        print(item)
+        print("has permutation")
     else:
-        print (item)
-        print ("no permutation")
+        print(item)
+        print("no permutation")

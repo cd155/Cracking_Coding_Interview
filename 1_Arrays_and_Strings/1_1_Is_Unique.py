@@ -33,11 +33,11 @@ def is_unique_bit_array(test_string):
 test_array = ["algorithm", "", "additional", "h", "2020", "DonaldTrump", "Tt", "12ad好"]
 for test_string in test_array:
     if is_unique_hash(test_string):
-        print ("Hash: Find the duplicate in " + test_string)
+        print("Hash: Find the duplicate in " + test_string)
     else:
-        print ("Hash: No duplicate in " + test_string)
+        print("Hash: No duplicate in " + test_string)
 
     if is_unique_array(test_string):
-        print ("Array: Find the duplicate in " + test_string)
+        print("Array: Find the duplicate in " + test_string)
     else:
-        print ("Array: No duplicate in " + test_string)
+        print("Array: No duplicate in " + test_string)
