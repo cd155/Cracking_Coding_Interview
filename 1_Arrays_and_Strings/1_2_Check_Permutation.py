@@ -22,7 +22,6 @@ def check_permutation_brutefoce(string_one, string_two):
             return False
     return True
 
-
 def check_permutation_hash(string_one, string_two):
     dict_table_one = {}
     dict_table_two = {}
