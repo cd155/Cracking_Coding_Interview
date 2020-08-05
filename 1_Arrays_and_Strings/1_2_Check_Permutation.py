@@ -52,15 +52,31 @@ def check_permutation_hash(string_one, string_two):
             return False
     return True
 
-# for test only
-testarrays = [["abcd","cbda"],["","a"],["b",""],["mcmaster","masterma"],["a","b"],["hello", "lhole"],["zc","z!"]]
-for testset in testarrays:
-    if check_permutation_brutefoce(testset[0], testset[1]):
-        print("* " + testset[0] + " is a permutation of " + testset[1])
-    else:
-        print("* " + testset[0] + " is NOT a permutation of " + testset[1])
-    
-    if check_permutation_hash(testset[0], testset[1]):
-        print("# " + testset[0] + " is a permutation of " + testset[1])
-    else:
-        print("# " + testset[0] + " is NOT a permutation of " + testset[1])
+import unittest
+class TestIsPermutation(unittest.TestCase):
+    def setUp(self):
+        self.sample_is_permutation = [["abcd","cbda"],["hello", "lhole"],["acemybest","bestmyace"]]
+        self.sample_is_not_permutation = [["","a"],["b",""],["mcmaster","masterma"],["a","b"],["zc","z!"]]
+
+    def tearDown(self):
+        self.sample_is_permutation = None
+        self.sample_is_not_permutation = None
+
+    def test_is_permutation_brutefoce(self):
+        for item in self.sample_is_permutation:
+            self.assertTrue(check_permutation_brutefoce(item[0], item[1]))
+
+    def test_is_not_permutation_brutefoce(self):
+        for item in self.sample_is_not_permutation:
+            self.assertFalse(check_permutation_brutefoce(item[0], item[1]))
+
+    def test_is_permutation_hash(self):
+        for item in self.sample_is_permutation:
+            self.assertTrue(check_permutation_hash(item[0], item[1]))
+
+    def test_is_not_permutation_hash(self):
+        for item in self.sample_is_not_permutation:
+            self.assertFalse(check_permutation_hash(item[0], item[1]))
+
+if __name__ == '__main__':
+    unittest.main()
