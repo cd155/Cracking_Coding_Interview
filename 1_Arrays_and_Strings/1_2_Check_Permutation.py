@@ -8,7 +8,6 @@
 
 # The following examples exclude condtions with blank spaces and case sensitive.
 def check_permutation_brutefoce(string_one, string_two):
-
     if len(string_one) != len(string_two):
         return False
 
@@ -25,7 +24,6 @@ def check_permutation_brutefoce(string_one, string_two):
 def check_permutation_hash(string_one, string_two):
     dict_table_one = {}
     dict_table_two = {}
-
     if len(string_one) != len(string_two):
         return False
 
@@ -56,7 +54,6 @@ def check_permutation_hash(string_one, string_two):
 
 # for test only
 testarrays = [["abcd","cbda"],["","a"],["b",""],["mcmaster","masterma"],["a","b"],["hello", "lhole"],["zc","z!"]]
-
 for testset in testarrays:
     if check_permutation_brutefoce(testset[0], testset[1]):
         print("* " + testset[0] + " is a permutation of " + testset[1])
