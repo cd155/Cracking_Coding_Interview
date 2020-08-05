@@ -17,12 +17,23 @@ def pair_string(string_long, string_short):
             return True
     return False
 
-# for test only
-test_arrays = [["abbcaaade","aaa"],["",""],["thisis","is"],["","ab"],["a","b"]]
-for item in test_arrays:
-    if check_substring(item[0],item[1]):
-        print(item)
-        print("has permutation")
-    else:
-        print(item)
-        print("no permutation")
+import unittest
+class TestIsSubstring(unittest.TestCase):
+    def setUp(self):
+        self.sample_is_substring = [["abbcaaade","aaa"],["thisis","is"],["happymorning","mor"]]
+        self.sample_is_not_substring = [["",""],["","ab"],["a","b"],["happymorning","where"]]
+
+    def tearDown(self):
+        self.sample_is_substring = None
+        self.sample_is_not_substring = None
+
+    def test_is_substring(self):
+        for item in self.sample_is_substring:
+            self.assertTrue(check_substring(item[0], item[1]))
+
+    def test_is_not_substring(self):
+        for item in self.sample_is_not_substring:
+            self.assertFalse(check_substring(item[0], item[1]))
+
+if __name__ == '__main__':
+    unittest.main()
