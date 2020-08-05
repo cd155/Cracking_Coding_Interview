@@ -15,7 +15,7 @@ def is_unique_array(test_string):
     bool_array = [False] * 128
     for char in test_string:
         if ord(char) > 128:
-            print ("Array: Out of Assumption in " + test_string)
+            print ("Array: Out of bound in " + test_string)
             return False
 
         if bool_array[ord(char)]:
@@ -30,11 +30,10 @@ def is_unique_bit_array(test_string):
     pass
 
 import unittest
-
 class TestIsUniqueCase(unittest.TestCase):
     def setUp(self):
-        self.sample_is_unique = ["algorithm"]#, "", "h", "DonaldTrump", "Tt", "12ad好"]
-        self.sample_is_not_unique = ["aa"]#"additional", "2020", "12zz明", "listening"]
+        self.sample_is_unique = ["algorithm", "", "h", "DonaldTrump", "Tt", "12ad好"]
+        self.sample_is_not_unique = ["additional", "2020", "12zz明", "listening"]
 
     def tearDown(self):
         self.sample_is_unique = None
@@ -57,5 +56,4 @@ class TestIsUniqueCase(unittest.TestCase):
             self.assertFalse(is_unique_array(item))
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestIsUniqueCase)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.main()
