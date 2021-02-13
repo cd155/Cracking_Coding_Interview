@@ -23,7 +23,6 @@ def check_permutation_brutefoce(string_one, string_two):
 
 def check_permutation_hash(string_one, string_two):
     dict_table_one = {}
-    dict_table_two = {}
     if len(string_one) != len(string_two):
         return False
 
@@ -33,24 +32,13 @@ def check_permutation_hash(string_one, string_two):
             dict_table_one[char] = 1
         else: 
             dict_table_one[char] = dict_table_one[char] + 1
-    
-    # Add string two into dictionary
+    # check whether char in the dictionary
     for char in string_two:
-        if char not in dict_table_two:
-            dict_table_two[char] = 1
-        else: 
-            dict_table_two[char] = dict_table_two[char] + 1
-    
-    if len(dict_table_one) != len(dict_table_two):
-        return False
-    
-    for key in dict_table_one:
-        if key not in dict_table_two:
+        if char in dict_table_one and dict_table_one[char] != 0:
+            dict_table_one[char] = dict_table_one[char] - 1
+        else:
             return False
-
-        if dict_table_one[key] != dict_table_two[key]:
-            return False
-    return True
+    return sum(dict_table_one.values()) == 0
 
 import unittest
 class TestIsPermutation(unittest.TestCase):
