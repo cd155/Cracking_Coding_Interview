@@ -3,3 +3,6 @@
 # EXAMPLE
 # Input: Tact Coa
 # Output: True (permutations: "taco cat", "atco eta", etc.)
+
+def check_permutation_of_palindrome(string_one, string_two):
+    pass

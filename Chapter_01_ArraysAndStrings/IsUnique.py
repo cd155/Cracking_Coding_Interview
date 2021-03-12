@@ -29,6 +29,7 @@ def is_unique_bit_array(test_string):
     # https://stackoverflow.com/questions/9141830/explain-the-use-of-a-bit-vector-for-determining-if-all-characters-are-unique
     pass
 
+
 import unittest
 class TestIsUniqueCase(unittest.TestCase):
     def setUp(self):

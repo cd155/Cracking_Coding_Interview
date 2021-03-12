@@ -8,6 +8,7 @@
 
 import re
 
+
 def replace_spaces_expression(input_string):
 
     # replace last whitespace to match the exmaple
@@ -21,6 +22,7 @@ def replace_spaces_expression(input_string):
     return re.sub(match_pattern, replacement_pattern, input_string)
 
 from pytest import *
+
 
 class TestReplaceSpaces:
 
@@ -47,24 +49,3 @@ expression%20this"""
     def test_replace_spaces_loop(self):
         assert replace_spaces_expression(self.test_input1) == self.test_output1
         assert replace_spaces_expression(self.test_input2) == self.test_output2
-
-# test_input = """Mr  John Smith     
-# Mrs  John Smith     
-# expression   this   """
-# test_input3 = """Mr  John Smith     
-# Mrs  John Smith     
-# expression   this   """
-
-# print(test_input == test_input3)
-
-# match_pattern = '([^ ]*) * $'
-# replacement_pattern = r'\g<1>'
-# result1 = re.sub(match_pattern, replacement_pattern, test_input)
-# match_pattern = '([^ ]*) +'
-# replacement_pattern = r'\g<1>%20'
-# result2 = re.sub(match_pattern, replacement_pattern, result1)
-# print(result1)
-# print(result2 == """Mr%20John%20Smith%20
-# Mrs%20John%20Smith%20
-# expression%20this""")
-# print(result2)
