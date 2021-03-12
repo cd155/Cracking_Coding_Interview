@@ -10,7 +10,8 @@ RMDIR = rm -rf
 test:
 	$(PYTEST) $(PYTESTFLAGS) $(SRC) $(COV)
 
-clean:
-	@- $(RMDIR) __pycache__
+clean:	
 	@- $(RMDIR) .pytest_cache
 	@- $(RMDIR) .coverage
+	cd Questions
+	@- $(RMDIR) **/*__pycache__
