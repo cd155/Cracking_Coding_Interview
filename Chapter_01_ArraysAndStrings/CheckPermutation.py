@@ -7,6 +7,10 @@
 # "dog    " and "    god" or "Dog" and "dog"
 
 # The following examples exclude condtions with blank spaces and case sensitive.
+
+# Solution: ideally we can use a hash table to track permutation of a string
+
+
 def check_permutation_brutefoce(string_one, string_two):
     if len(string_one) != len(string_two):
         return False

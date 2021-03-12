@@ -2,6 +2,11 @@
 # Implement an algorithm to determine if a string has all unique characters. 
 # What if you cannot use additional data structures?
 
+# Solution1: You can use a hash table to track all characters
+# Solution2: Without data structure, you can array to track all characters.
+# a character is a unicode, and it could be casted as an interger.
+
+
 def is_unique_hash(test_string):
     dict_table = {}
     for char in test_string:

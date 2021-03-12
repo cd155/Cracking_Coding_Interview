@@ -1,6 +1,9 @@
 # Check Substring: 
 # Given two strings,write a method to decide if one is a substring of the other.
 
+# Solution: Check every substring.
+
+
 def check_substring(string_one, string_two):
     if len(string_one) > len(string_two):
         return pair_string(string_one, string_two)
