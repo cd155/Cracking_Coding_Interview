@@ -40,29 +40,3 @@ def check_if_one_edit_away(long_str, short_str):
     if len(long_str) != len(short_str):
         short_str = short_str + long_str[-1]
     return short_str == long_str
-
-
-from pytest import *
-
-
-class TestFindIfOneEditAway:
-
-    # initialize an instance of Set for each test
-    def setup_method(self, method):
-        self.input1 = ["pale", "ple"]
-        self.input2 = ["pales", "pale"]
-        self.input3 = ["pale", "bale"]
-        self.input4 = ["pale", "bake"]
-
-    # reset state variables
-    def teardown_method(self, method):
-        self.input1 = None
-        self.input2 = None
-        self.input3 = None
-        self.input4 = None
-
-    def test_replace_spaces_loop(self):
-        assert check_if_one_edit_away(self.input1[0], self.input1[1])
-        assert check_if_one_edit_away(self.input2[0], self.input2[1])
-        assert check_if_one_edit_away(self.input3[0], self.input3[1])
-        assert not check_if_one_edit_away(self.input4[0], self.input4[1])

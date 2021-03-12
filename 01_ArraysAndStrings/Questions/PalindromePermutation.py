@@ -21,7 +21,6 @@ def check_permutation_of_palindrome(input):
 
     f = lambda x: x > 0
     a_gt_one = [char for char in input if f(a[ord(char)])]
-    print(a_gt_one)
     if len(a_gt_one) > 1:
         return False
     else:
@@ -32,25 +31,3 @@ def pre_process(input):
 
 def check_permutation_of_palindrome_with_pre_process(input):
     return check_permutation_of_palindrome(pre_process(input))
-
-from pytest import *
-
-
-class TestCheckPermutationOfPalindrome:
-
-    # initialize an instance of Set for each test
-    def setup_method(self, method):
-        self.input1 = "Tact Coa"
-        self.input2 = "taco cat"
-        self.input3 = "atco cta"
-
-    # reset state variables
-    def teardown_method(self, method):
-        self.input1 = None
-        self.input2 = None
-        self.input3 = None
-
-    def test_replace_spaces_loop(self):
-        assert check_permutation_of_palindrome_with_pre_process(self.input1)
-        assert check_permutation_of_palindrome_with_pre_process(self.input2)
-        assert check_permutation_of_palindrome_with_pre_process(self.input3)
