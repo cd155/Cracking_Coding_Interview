@@ -6,7 +6,7 @@
 # Output: True (permutations: "taco cat", "atco cta", etc.)
 
 # Solution: We can use an array whether it is a permutation of palindrome.
-# Note: Lower case and upper case do matter in this case.
+# Note: Lower or upper case and white space do matter in this case, so make sure ask interviewers.
 
 
 def check_permutation_of_palindrome(input):
@@ -20,12 +20,18 @@ def check_permutation_of_palindrome(input):
             a[ind] += 1
 
     f = lambda x: x > 0
-    a_gt_one = [char for char in input if f(char)]
+    a_gt_one = [char for char in input if f(a[ord(char)])]
+    print(a_gt_one)
     if len(a_gt_one) > 1:
         return False
     else:
         return True
 
+def pre_process(input):
+    return input.lower().replace(" ", "")
+
+def check_permutation_of_palindrome_with_pre_process(input):
+    return check_permutation_of_palindrome(pre_process(input))
 
 from pytest import *
 
@@ -46,6 +52,6 @@ class TestCheckPermutationOfPalindrome:
         self.input3 = None
 
     def test_replace_spaces_loop(self):
-        assert check_permutation_of_palindrome(self.input1)
-        assert check_permutation_of_palindrome(self.input2)
-        assert check_permutation_of_palindrome(self.input3)
+        assert check_permutation_of_palindrome_with_pre_process(self.input1)
+        assert check_permutation_of_palindrome_with_pre_process(self.input2)
+        assert check_permutation_of_palindrome_with_pre_process(self.input3)
