@@ -44,7 +44,6 @@ class TestCheckPermutationOfPalindrome:
         self.input2 = "taco cat"
         self.input3 = "atco cta"
 
-
     # reset state variables
     def teardown_method(self, method):
         self.input1 = None
