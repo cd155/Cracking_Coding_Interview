@@ -1,5 +1,6 @@
 from pytest import *
 from IsUnique import *
+from CheckPermutation import *
 from URLify import replace_spaces_expression
 from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
 from OneAway import find_if_one_edit_away
@@ -28,6 +29,28 @@ class TestIsUniqueCase:
         for s in self.input1:
             assert is_unique_array(s)
         assert not is_unique_array(self.input2)
+
+
+# Check Permutation
+class TestCheckPermutation:
+
+    def setup_method(self, method):
+        self.input1 = "abcdee", "cbeeda"
+        self.input2 = [["zhc", "zh!"], ["xy", "xyz"]]
+
+    def teardown_method(self, method):
+        self.input1 = None
+        self.input2 = None
+
+    def test_check_permutation_replace(self):
+        assert check_permutation_replace(self.input1[0], self.input1[1])
+        for s in self.input2:
+            assert not check_permutation_replace(s[0], s[1])
+
+    def test_check_permutation_hash(self):
+        assert check_permutation_hash(self.input1[0], self.input1[1])
+        for s in self.input2:
+            assert not check_permutation_hash(s[0], s[1])
 
 
 # URLify
@@ -76,7 +99,7 @@ class TestFindIfOneEditAway:
 
     def setup_method(self, method):
         self.input1 = [["pale", "ple"], ["pales", "pale"], ["pale", "pale"]]
-        self.input2 = [["pale", "bake"], ["bake", "paleee"], ["test111", "test1"]]
+        self.input2 = [["pale", "bake"], ["bake", "palee"], ["test111", "test1"], ["hello", "hellwor"]] 
 
     def teardown_method(self, method):
         self.input1 = None
