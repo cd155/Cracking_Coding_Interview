@@ -10,6 +10,7 @@
 # Read use bit vector to determine character is unique
 # https://stackoverflow.com/questions/9141830/explain-the-use-of-a-bit-vector-for-determining-if-all-characters-are-unique
 
+
 def is_unique_hash(input1):
     dict_table = {}
     for s in input1:
