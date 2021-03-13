@@ -12,18 +12,18 @@
 
 def is_unique_hash(input1):
     dict_table = {}
-    for char in input1:
-        if char in dict_table:
+    for s in input1:
+        if s in dict_table:
             return False
         else:
-            dict_table[char] = True
+            dict_table[s] = True
     return True
 
 def is_unique_array(input1):
     bool_array = [False] * 128
-    for char in input1:
-        if bool_array[ord(char)]:
+    for s in input1:
+        if bool_array[ord(s)]:
             return False
         else:
-            bool_array[ord(char)] = True
+            bool_array[ord(s)] = True
     return True

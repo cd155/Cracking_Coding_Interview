@@ -11,16 +11,15 @@
 
 def check_permutation_of_palindrome(input1):
     a = [0] * 128
-
-    for char in input1:
-        ind = ord(char)
+    for s in input1:
+        ind = ord(s)
         if a[ind] > 0:
             a[ind] -= 1
         else:
             a[ind] += 1
 
     f = lambda x: x > 0
-    a_gt_one = [char for char in input1 if f(a[ord(char)])]
+    a_gt_one = [s for s in input1 if f(a[ord(s)])]
     if len(a_gt_one) > 1:
         return False
     else:
