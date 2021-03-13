@@ -4,6 +4,7 @@ PYTESTFLAGS = --cov
 
 SRC = Questions
 COV = --cov-report term-missing
+DIF = -v
 
 RMDIR = rm -rf
 
@@ -12,7 +13,7 @@ RMDIR = rm -rf
 all: test clean
 
 test:
-	$(PYTEST) $(PYTESTFLAGS) $(SRC) $(COV)
+	$(PYTEST) $(PYTESTFLAGS) $(SRC) $(COV) $(DIF)
 
 clean:	
 	@- $(RMDIR) .pytest_cache
