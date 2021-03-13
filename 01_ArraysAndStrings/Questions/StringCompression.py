@@ -9,20 +9,20 @@
 # element and the next element to check if they are equal, write new string accordingly.
 
 
-def find_string_compression(input):
+def find_string_compression(input1):
     compressed = ""
     count = 1
-    for i in range(len(input)):
+    for i in range(len(input1)):
         runnerup = i + 1
-        if runnerup == len(input):
-            compressed += (input[i] + str(count))
+        if runnerup == len(input1):
+            compressed += (input1[i] + str(count))
             break
-        if input[i] != input[runnerup]:
-            compressed += (input[i] + str(count))
+        if input1[i] != input1[runnerup]:
+            compressed += (input1[i] + str(count))
             count = 1
         else: 
             count += 1
 
-    if len(compressed) >= len(input):
-        compressed = input
+    if len(compressed) >= len(input1):
+        compressed = input1
     return compressed

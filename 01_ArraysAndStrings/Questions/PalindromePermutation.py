@@ -9,10 +9,10 @@
 # Note: Lower or upper case and white space do matter in this case, so make sure ask interviewers.
 
 
-def check_permutation_of_palindrome(input):
+def check_permutation_of_palindrome(input1):
     a = [0] * 128
 
-    for char in input:
+    for char in input1:
         ind = ord(char)
         if a[ind] > 0:
             a[ind] -= 1
@@ -20,14 +20,14 @@ def check_permutation_of_palindrome(input):
             a[ind] += 1
 
     f = lambda x: x > 0
-    a_gt_one = [char for char in input if f(a[ord(char)])]
+    a_gt_one = [char for char in input1 if f(a[ord(char)])]
     if len(a_gt_one) > 1:
         return False
     else:
         return True
 
-def pre_process(input):
-    return input.lower().replace(" ", "")
+def pre_process(input1):
+    return input1.lower().replace(" ", "")
 
-def check_permutation_of_palindrome_with_pre_process(input):
-    return check_permutation_of_palindrome(pre_process(input))
+def check_permutation_of_palindrome_with_pre_process(input1):
+    return check_permutation_of_palindrome(pre_process(input1))
