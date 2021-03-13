@@ -19,8 +19,8 @@ def check_permutation_of_palindrome(input1):
             a[ind] += 1
 
     f = lambda x: x > 0
-    a_gt_one = [s for s in input1 if f(a[ord(s)])]
-    if len(a_gt_one) > 1:
+    a_gt_zero = [e for e in a if f(e)]
+    if len(a_gt_zero) > 1:
         return False
     else:
         return True
