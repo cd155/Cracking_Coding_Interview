@@ -1,5 +1,5 @@
 # Cracking the Coding Interview
-Solution for Cracking the Coding Interview 
+Solutions in Python with detailed explanations.
 
 ## Interview Questions
 - Chapter one: Arrays and String
