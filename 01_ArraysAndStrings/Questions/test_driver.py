@@ -6,6 +6,7 @@ from URLify import replace_spaces_expression
 from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
 from OneAway import find_if_one_edit_away
 from StringCompression import find_string_compression
+from RotateMatrix import rotate_matrix_multiple_times
 
 
 # Is Unique
@@ -126,6 +127,24 @@ class TestFindStringCompression:
     def test_find_string_compression(self):
         assert find_string_compression(self.input1) == "a2b1c5a3"
         assert find_string_compression(self.input2) == "abcd"
+
+
+# Rotate Matrix
+class TestRotateMatrix():
+
+    def setup_method(self, method):
+        self.input1 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
+        self.input2 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
+        self.input3 = [[3, 7, 11, 15], [2, 6, 10, 14], [1, 5, 9, 13], [0, 4, 8, 12]]
+
+    def teardown_method(self, method):
+        self.input1 = None
+        self.input2 = None
+        self.input3 = None
+
+    def test_rotate_matrix_multiple_times(self):
+        assert rotate_matrix_multiple_times(self.input1, 4, 630) == self.input3
+        assert rotate_matrix_multiple_times(self.input2, 4, -90) == self.input3
 
 
 # SubString
