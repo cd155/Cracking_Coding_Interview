@@ -8,4 +8,8 @@ Solution for Cracking the Coding Interview
     - [URLify](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/URLify.py)
     - [Palindrome Pemutation](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/PalindromePermutation.py)
     - [One Away](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/OneAway.py)
-    - String Compression
+    - [String Compression](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/StringCompression.py)
+    - [Rotate Matrix](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/RotateMatrix.py)
+    - [Zero Matrix](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/ZeroMatrix.py)
+    - [String Rotation](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/StringRotation.py)
+- Chapter two: Linked Lists
