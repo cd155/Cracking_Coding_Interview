@@ -14,6 +14,7 @@ import re
 def replace_spaces_expression(input_string):
 
     # replace last whitespace to match the exmaple
+    # find the last word end with whitespace and body has no whitespace
     match_pattern = '([^ ]*) * $'
     replacement_pattern = r'\g<1>'
     input_string = re.sub(match_pattern, replacement_pattern, input_string)
