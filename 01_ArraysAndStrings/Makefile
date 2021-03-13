@@ -7,6 +7,10 @@ COV = --cov-report term-missing
 
 RMDIR = rm -rf
 
+.PHONY: test clean
+
+all: test clean
+
 test:
 	$(PYTEST) $(PYTESTFLAGS) $(SRC) $(COV)
 
