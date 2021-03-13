@@ -1,4 +1,5 @@
 from pytest import *
+from CheckSubstring import check_substring
 from IsUnique import *
 from CheckPermutation import *
 from URLify import replace_spaces_expression
@@ -44,13 +45,13 @@ class TestCheckPermutation:
 
     def test_check_permutation_replace(self):
         assert check_permutation_replace(self.input1[0], self.input1[1])
-        for s in self.input2:
-            assert not check_permutation_replace(s[0], s[1])
+        for e in self.input2:
+            assert not check_permutation_replace(e[0], e[1])
 
     def test_check_permutation_hash(self):
         assert check_permutation_hash(self.input1[0], self.input1[1])
-        for s in self.input2:
-            assert not check_permutation_hash(s[0], s[1])
+        for e in self.input2:
+            assert not check_permutation_hash(e[0], e[1])
 
 
 # URLify
@@ -106,10 +107,10 @@ class TestFindIfOneEditAway:
         self.input2 = None
 
     def test_find_if_one_edit_away(self):
-        for s in self.input1:
-            assert find_if_one_edit_away(s[0], s[1])
-        for s in self.input2:
-            assert not find_if_one_edit_away(s[0], s[1])
+        for e in self.input1:
+            assert find_if_one_edit_away(e[0], e[1])
+        for e in self.input2:
+            assert not find_if_one_edit_away(e[0], e[1])
 
 # String Compression
 class TestFindStringCompression:
@@ -125,3 +126,20 @@ class TestFindStringCompression:
     def test_find_string_compression(self):
         assert find_string_compression(self.input1) == "a2b1c5a3"
         assert find_string_compression(self.input2) == "abcd"
+
+
+# SubString
+class TestCheckSubstring():
+
+    def setup_method(self, method):
+        self.input1 = "abbcaaade","aaa"
+        self.input2 = [["","ab"],["python3","xyz"]]
+
+    def teardown_method(self, method):
+        self.input1 = None
+        self.input2 = None
+
+    def test_check_substring(self):
+        assert check_substring(self.input1[0], self.input1[1])
+        for e in self.input2:
+            assert not check_substring(e[0], e[1])
