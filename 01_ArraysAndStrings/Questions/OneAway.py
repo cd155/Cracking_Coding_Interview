@@ -13,13 +13,15 @@
 # Note: add and remove could reach the same result.
 
 def find_if_one_edit_away(input1, input2):
-    lenth_diff = len(input1) - len(input2)
+    length_diff = len(input1) - len(input2)
     if input1 == input2:
         return True
-    elif lenth_diff > 1:
+    elif length_diff > 1:
+        return False
+    elif length_diff < -1:
         return False
     else:
-        if lenth_diff < 0:
+        if length_diff == -1:
             buffer = input1
             input1 = input2
             input2 = buffer
