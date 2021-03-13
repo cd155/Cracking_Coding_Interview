@@ -12,4 +12,6 @@ Solution for Cracking the Coding Interview
     - [Rotate Matrix](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/RotateMatrix.py)
     - [Zero Matrix](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/ZeroMatrix.py)
     - [String Rotation](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/StringRotation.py)
+    - [Substring](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/CheckSubstring.py)
+    - [Unit Test Cases](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Questions/test_driver.py)
 - Chapter two: Linked Lists
