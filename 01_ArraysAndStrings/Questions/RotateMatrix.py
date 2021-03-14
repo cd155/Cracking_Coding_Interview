@@ -26,10 +26,10 @@ def rotate_matrix_multiple_times(array2d, size, degree):
     return array2d
 
 def rotate_matrix_clockwise(array2d, size):
-    start = 0 
+    start = 0
+    # each row iterate size - 1 times
     end = size -1
     for i in range(int(size/2)):
-        # each row iterate size - 1 times
         for j in range(start, end):
             x = j
             y = size-1-i
