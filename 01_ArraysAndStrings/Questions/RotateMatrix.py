@@ -14,23 +14,22 @@
 
 
 def rotate_matrix_multiple_times(array2d, size, degree):
-    reduce_degree = degree%360
+    reduce_degree = abs(degree)%360
     rotate_time = 0
-    if reduce_degree >= 0:
+    if degree >= 0:
         rotate_time = reduce_degree/90
     else:
-        rotate_time = 4 + reduce_degree/90
+        rotate_time = 4 - reduce_degree/90
 
-    new_array = array2d
     for _ in range(int(rotate_time)):
-        new_array = rotate_matrix_clockwise(new_array, size)
-    return new_array
+        rotate_matrix_clockwise(array2d, size)
+    return array2d
 
 def rotate_matrix_clockwise(array2d, size):
     start = 0 
     end = size -1
-    # each row iterate size - 1 times
     for i in range(int(size/2)):
+        # each row iterate size - 1 times
         for j in range(start, end):
             x = j
             y = size-1-i
