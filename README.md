@@ -1,5 +1,5 @@
-# Cracking the Coding Interview
-Solutions in Python with detailed explanations.
+# Literate Programming  for Cracking the Coding Interview 
+Solutions in Jupyter Notebook with detailed explanations.
 
 ## Interview Questions
 - Chapter One: Arrays and String
