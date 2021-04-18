@@ -13,7 +13,7 @@
         - Is Unique
         - Check Permutation
         - URLify
-        - Palindrome Pemutation
+        - Palindrome Permutation
         - One Away
         - String Compression
         - Rotate Matrix
