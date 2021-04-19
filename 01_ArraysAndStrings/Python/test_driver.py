@@ -32,26 +32,27 @@ class TestIsUniqueCase:
     def test_is_unique_bit(self):
         assert list(map(is_unique_bit, self.input1)) == self.ans1
 
+
 # Check Permutation
 class TestCheckPermutation:
 
     def setup_method(self, method):
-        self.input1 = "abcdee", "cbeeda"
-        self.input2 = [["zhc", "zh!"], ["xy", "xyz"]]
+        self.input1 = ["amigo?", "12zz!?", "hello1", "", "hey*", 
+                       "a", "dogod", "flask", "~1246this", "mil~k"]
+        self.input2 = ["go?ima", "z21s.!", "hello", "", "", 
+                       "b", "goddo", "flush", "this~1246", "mlk~k"]
+        self.ans1 = [True, False, False, True, False, False, True, False, True, False] 
 
     def teardown_method(self, method):
         self.input1 = None
         self.input2 = None
+        self.ans1 = None
 
-    def test_check_permutation_replace(self):
-        assert check_permutation_replace(self.input1[0], self.input1[1])
-        for e in self.input2:
-            assert not check_permutation_replace(e[0], e[1])
+    def test_is_permute_dict(self):
+        assert list(map(is_permute_dict, self.input1, self.input2)) == self.ans1
 
-    def test_check_permutation_hash(self):
-        assert check_permutation_hash(self.input1[0], self.input1[1])
-        for e in self.input2:
-            assert not check_permutation_hash(e[0], e[1])
+    def test_is_permute_arr(self):
+        assert list(map(is_permute_arr, self.input1, self.input2)) == self.ans1
 
 
 # URLify
