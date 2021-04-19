@@ -18,5 +18,5 @@ test:
 clean:	
 	@- $(RMDIR) .pytest_cache
 	@- $(RMDIR) .coverage
-	cd Questions
+	cd Python
 	@- $(RMDIR) **/*__pycache__
