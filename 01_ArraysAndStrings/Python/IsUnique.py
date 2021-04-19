@@ -1,30 +1,33 @@
-# Is Unique: 
-# Implement an algorithm to determine if a string has all unique characters. 
-# What if you cannot use additional data structures?
-
-# Solution1: You can use a hash table to track all characters
-# Solution2: Without data structure, you can array to track all characters.
-# a character is a unicode, and it could be casted as an interger.
-# Read ascii information:
-# https://www.ascii-code.com
-# Read use bit vector to determine character is unique
-# https://stackoverflow.com/questions/9141830/explain-the-use-of-a-bit-vector-for-determining-if-all-characters-are-unique
+# # Is Unique: 
+#     Implement an algorithm to determine if a string has all unique characters. 
+#     
+#     What if you cannot use additional data structures?
 
 
-def is_unique_hash(input1):
-    dict_table = {}
-    for s in input1:
-        if s in dict_table:
+def is_unique_dict(inputs):
+    d = {}
+    for cha in inputs:
+        if cha in d:
             return False
         else:
-            dict_table[s] = True
+            d[cha] = 0
     return True
 
-def is_unique_array(input1):
-    bool_array = [False] * 128
-    for s in input1:
-        if bool_array[ord(s)]:
+def is_unique_arr(inputs):
+    arr = [False]*128
+    for cha in inputs:
+        if arr[ord(cha)]:
             return False
         else:
-            bool_array[ord(s)] = True
+            arr[ord(cha)] = True
     return True
+
+def is_unique_bit(inputs):
+    checker = 0
+    for cha in inputs:
+        cha_in_num = ord(cha)-ord(" ")
+        if checker & 1 << cha_in_num:
+            return False
+        else: 
+            checker |= 1 << cha_in_num
+    return True  

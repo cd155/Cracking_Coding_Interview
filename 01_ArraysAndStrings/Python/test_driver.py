@@ -14,24 +14,23 @@ class TestIsUniqueCase:
 
     # initialize an instance of Set for each test
     def setup_method(self, method):
-        self.input1 = ["algorithm", "12ad@^"]
-        self.input2 = "12zz!?"
+        self.input1 = ["algorithm?", "12zz!?", "", "a", "oops", 
+                       "thisgreat", "12!-!?", "123aaaaaaa!?", "ertushg819#@", "~triangle~", 
+                       "mil~k", " this!2", "  "]
+        self.ans1 = [True, False, True, True, False, False, False, False, True, False, True, True, False] 
 
     # reset state variables
     def teardown_method(self, method):
         self.input1 = None
-        self.input2 = None
 
-    def test_is_unique_hash(self):
-        for s in self.input1:
-            assert is_unique_hash(s)
-        assert not is_unique_hash(self.input2)
+    def test_is_unique_dict(self):
+        assert list(map(is_unique_dict, self.input1)) == self.ans1
 
-    def test_is_unique_array(self):
-        for s in self.input1:
-            assert is_unique_array(s)
-        assert not is_unique_array(self.input2)
+    def test_is_unique_arr(self):
+        assert list(map(is_unique_arr, self.input1)) == self.ans1
 
+    def test_is_unique_bit(self):
+        assert list(map(is_unique_bit, self.input1)) == self.ans1
 
 # Check Permutation
 class TestCheckPermutation:
