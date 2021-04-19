@@ -2,7 +2,7 @@ PY = python3
 PYTEST = pytest
 PYTESTFLAGS = --cov
 
-SRC = Questions
+SRC = Python
 COV = --cov-report term-missing
 DIF = -v
 
