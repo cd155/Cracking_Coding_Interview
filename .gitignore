@@ -2,3 +2,4 @@
 .DS_Store
 *.coverage
 *.ipynb_checkpoints*
+note.localignore
