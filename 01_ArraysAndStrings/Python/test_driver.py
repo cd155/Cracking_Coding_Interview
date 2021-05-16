@@ -4,7 +4,7 @@ from IsUnique import *
 from CheckPermutation import *
 from URLify import replace_spaces_expression
 from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
-from OneAway import find_if_one_edit_away
+from OneAway import oneway_dict
 from StringCompression import find_string_compression
 from RotateMatrix import rotate_matrix_multiple_times
 
@@ -100,18 +100,19 @@ class TestCheckPermutationOfPalindrome:
 class TestFindIfOneEditAway:
 
     def setup_method(self, method):
-        self.input1 = [["pale", "ple"], ["pales", "pale"], ["pale", "pale"]]
-        self.input2 = [["pale", "bake"], ["bake", "palee"], ["test111", "test1"], ["hello", "hellwor"]] 
+        self.input1 = ["tech", "tech", "tech", "tech", "tech", 
+                       "", "", "", "a", "university", "dog", "tech"]
+        self.input2 = ["teach", "ech", "tach", "tech", "team", 
+                       "", "e", "ed", "b", "universal", "hog", "aacc"]
+        self.ans1 = [True, True, True, True, False, True, True, False, True, False, True, False] 
 
     def teardown_method(self, method):
         self.input1 = None
         self.input2 = None
+        self.ans1 = None
 
     def test_find_if_one_edit_away(self):
-        for e in self.input1:
-            assert find_if_one_edit_away(e[0], e[1])
-        for e in self.input2:
-            assert not find_if_one_edit_away(e[0], e[1])
+        assert list(map(oneway_dict, self.input1, self.input2)) == self.ans1
 
 # String Compression
 class TestFindStringCompression:
