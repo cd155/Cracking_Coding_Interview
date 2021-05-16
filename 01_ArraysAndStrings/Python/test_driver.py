@@ -5,7 +5,7 @@ from CheckPermutation import *
 from URLify import replace_spaces_expression
 from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
 from OneAway import oneway_dict
-from StringCompression import find_string_compression
+from StringCompress import string_compress
 from RotateMatrix import rotate_matrix_multiple_times
 
 
@@ -118,16 +118,15 @@ class TestFindIfOneEditAway:
 class TestFindStringCompression:
 
     def setup_method(self, method):
-        self.input1 = "aabcccccaaa"
-        self.input2 = "abcd"
+        self.input1 = ["aabcccccaaa", "", "a", "ab", "aaaaapplllllle", "aaaaaaaa"]
+        self.ans1 = ["a2b1c5a3", "", "a1", "a1b1", "a5p2l6e1", "a8"]
 
     def teardown_method(self, method):
         self.input1 = None
-        self.input2 = None
+        self.ans1 = None
 
     def test_find_string_compression(self):
-        assert find_string_compression(self.input1) == "a2b1c5a3"
-        assert find_string_compression(self.input2) == "abcd"
+        assert list(map(string_compress, self.input1)) == self.ans1
 
 
 # Rotate Matrix
