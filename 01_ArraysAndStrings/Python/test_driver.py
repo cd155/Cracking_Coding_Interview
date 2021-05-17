@@ -6,7 +6,7 @@ from URLify import replace_spaces_expression
 from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
 from OneAway import oneway_dict
 from StringCompress import string_compress
-from RotateMatrix import rotate_matrix_multiple_times
+from RotateMatrix import rotate_matrix_with_degree
 
 
 # Is Unique
@@ -133,18 +133,35 @@ class TestFindStringCompression:
 class TestRotateMatrix():
 
     def setup_method(self, method):
-        self.input1 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
-        self.input2 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
-        self.input3 = [[3, 7, 11, 15], [2, 6, 10, 14], [1, 5, 9, 13], [0, 4, 8, 12]]
+        self.input1 = [
+            [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]], 
+            [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]], 
+            [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]], 
+            [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]],
+            [[]], 
+            [[1, 2, 3], [4, 5, 6], [7, 8, 9]], 
+            [[5]], 
+            [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]],
+            [[1, 2, 3], [4, 5, 6], [7, 8, 9]]]
+        self.input2 = [90, 450, -90, -450, 90, 0, -90, 180, -270]
+        self.ans1 = [
+            [[12, 8, 4, 0], [13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3]], 
+            [[12, 8, 4, 0], [13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3]], 
+            [[3, 7, 11, 15], [2, 6, 10, 14], [1, 5, 9, 13], [0, 4, 8, 12]], 
+            [[3, 7, 11, 15], [2, 6, 10, 14], [1, 5, 9, 13], [0, 4, 8, 12]],
+            [[]],
+            [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+            [[5]],
+            [[15, 14, 13, 12], [11, 10, 9, 8], [7, 6, 5, 4], [3, 2, 1, 0]],
+            [[7, 4, 1], [8, 5, 2], [9, 6, 3]]]
 
     def teardown_method(self, method):
         self.input1 = None
         self.input2 = None
-        self.input3 = None
+        self.ans1 = None
 
-    def test_rotate_matrix_multiple_times(self):
-        assert rotate_matrix_multiple_times(self.input1, 4, 630) == self.input3
-        assert rotate_matrix_multiple_times(self.input2, 4, -90) == self.input3
+    def test_rotate_matrix_with_degree(self):
+        assert list(map(rotate_matrix_with_degree, self.input1, self.input2)) == self.ans1
 
 
 # SubString
