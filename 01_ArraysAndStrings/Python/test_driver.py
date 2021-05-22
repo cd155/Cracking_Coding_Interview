@@ -1,5 +1,4 @@
 from pytest import *
-from CheckSubstring import check_substring
 from IsUnique import *
 from CheckPermutation import *
 from URLify import replace_spaces_expression
@@ -7,6 +6,7 @@ from PalindromePermutation import check_permutation_of_palindrome_with_pre_proce
 from OneAway import oneway_dict
 from StringCompress import string_compress
 from RotateMatrix import rotate_matrix_with_degree
+from ZeroMatrix import *
 
 
 # Is Unique
@@ -162,3 +162,59 @@ class TestRotateMatrix():
 
     def test_rotate_matrix_with_degree(self):
         assert list(map(rotate_matrix_with_degree, self.input1, self.input2)) == self.ans1
+
+
+# Zero Matrix
+class TestZeroMatrix():
+
+    def setup_method(self, method):
+        self.input1 = [
+            [[1, 2, 3], [4, 0, 6], [7, 8, 9]], 
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [],
+            [[1]],
+            [[1, 0], [3, 4]],
+            [[1, 2], [0, 4]],
+            [[1, 2, 3], [4, 5, 6], [7, 0, 9]],
+            [[0, 2], [3, 4]],
+            [[0]],
+            [[1, 0, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 0, 16]],
+            [[1, 2, 3, 4], [0, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 0], [13, 14, 15, 16]],
+            [[0, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [0, 14, 15, 16]],
+            [[1, 2, 3, 0], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]],
+            [[1, 2, 3, 4], [5, 0, 7, 8], [9, 10, 0, 12], [13, 14, 15, 16]],
+            [[1, 0, 3], [0, 5, 6], [7, 8, 0]]]
+        self.ans1 = [
+            [[1, 0, 3], [0, 0, 0], [7, 0, 9]], 
+            [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+            [],
+            [[1]],
+            [[0, 0], [3, 0]],
+            [[0, 2], [0, 0]],
+            [[1, 0, 3], [4, 0, 6], [0, 0, 0]],
+            [[0, 0], [0, 4]],
+            [[0]],
+            [[0, 0, 0, 0], [5, 0, 7, 8], [9, 0, 11, 12], [13, 0, 15, 16]],
+            [[1, 2, 0, 4], [5, 6, 0, 8], [9, 10, 0, 12], [0, 0, 0, 0]],
+            [[0, 2, 3, 4], [0, 0, 0, 0], [0, 10, 11, 12], [0, 14, 15, 16]],
+            [[1, 2, 3, 0], [5, 6, 7, 0], [0, 0, 0, 0], [13, 14, 15, 0]],
+            [[0, 0, 0, 0], [0, 6, 7, 8], [0, 10, 11, 12], [0, 14, 15, 16]],
+            [[0, 2, 3, 4], [0, 6, 7, 8], [0, 10, 11, 12], [0, 0, 0, 0]],
+            [[0, 0, 0, 0], [5, 6, 7, 0], [9, 10, 11, 0], [13, 14, 15, 0]],
+            [[1, 2, 3, 0], [5, 6, 7, 0], [9, 10, 11, 0], [0, 0, 0, 0]],
+            [[1, 0, 0, 4], [0, 0, 0, 0], [0, 0, 0, 0], [13, 0, 0, 16]],
+            [[0, 0, 0], [0, 0, 0], [0, 0, 0]]]
+
+    def teardown_method(self, method):
+        self.input1 = None
+        self.ans1 = None
+
+    def test_zero_matrix_inplace(self):
+        assert list(map(zero_matrix_inplace, self.input1)) == self.ans1
+
+    def test_zero_matrix_dict(self):
+        assert list(map(zero_matrix_dict, self.input1)) == self.ans1
