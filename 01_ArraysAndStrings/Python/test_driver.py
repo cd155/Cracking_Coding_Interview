@@ -2,7 +2,7 @@ from pytest import *
 from IsUnique import *
 from CheckPermutation import *
 from URLify import replace_spaces_expression
-from PalindromePermutation import check_permutation_of_palindrome_with_pre_process
+from PermutePalindrome import is_permute_palindrome_arr
 from OneAway import oneway_dict
 from StringCompress import string_compress
 from RotateMatrix import rotate_matrix_with_degree
@@ -81,19 +81,15 @@ expression%20this"""
 class TestCheckPermutationOfPalindrome:
 
     def setup_method(self, method):
-        self.input1 = "Tact Coa"
-        self.input2 = "taco cat"
-        self.input3 = "atieo cta"
+        self.input1 = ["universal", "tactcoa", "adcocda", "", "abcdefg", "thissiht", "thisasiht", "school"]
+        self.ans1 = [False, True, True, True, False, True, True, False]
 
     def teardown_method(self, method):
         self.input1 = None
-        self.input2 = None
-        self.input3 = None
+        self.ans1 = None
 
     def test_check_permutation_of_palindrome(self):
-        assert check_permutation_of_palindrome_with_pre_process(self.input1)
-        assert check_permutation_of_palindrome_with_pre_process(self.input2)
-        assert not check_permutation_of_palindrome_with_pre_process(self.input3)
+        assert list(map(is_permute_palindrome_arr, self.input1)) == self.ans1
 
 
 # One Away
