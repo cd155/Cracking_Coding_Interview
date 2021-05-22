@@ -19,7 +19,6 @@
         - Rotate Matrix
         - Zero Matrix
         - String Rotation
-        - Substring
         - Unit Test Cases
 - Chapter Two: Linked Lists
     - Key Knowledge:

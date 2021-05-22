@@ -162,20 +162,3 @@ class TestRotateMatrix():
 
     def test_rotate_matrix_with_degree(self):
         assert list(map(rotate_matrix_with_degree, self.input1, self.input2)) == self.ans1
-
-
-# SubString
-class TestCheckSubstring():
-
-    def setup_method(self, method):
-        self.input1 = "abbcaaade","aaa"
-        self.input2 = [["","ab"],["python3","xyz"]]
-
-    def teardown_method(self, method):
-        self.input1 = None
-        self.input2 = None
-
-    def test_check_substring(self):
-        assert check_substring(self.input1[0], self.input1[1])
-        for e in self.input2:
-            assert not check_substring(e[0], e[1])
