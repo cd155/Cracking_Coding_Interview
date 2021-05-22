@@ -1,6 +1,6 @@
 # Cracking the Coding Interview 
 - Practice on Literate Programming
-- Practice on Unit Test
+- Practice on Unit Test - in test_driver.py
 - Practice on White Box and Black Box Testing
 ## Interview Questions
 - Chapter One: Arrays and String
@@ -19,6 +19,5 @@
         - Rotate Matrix
         - Zero Matrix
         - String Rotation
-        - Unit Test Cases
 - Chapter Two: Linked Lists
     - Key Knowledge:
