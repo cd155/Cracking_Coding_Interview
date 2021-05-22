@@ -6,7 +6,7 @@
 #     A permutation is a rearrangement of letters. The palindrome does not need to be limited tojust dictionary words.
 
 
-def is_permute_pd_arr(input):
+def is_permute_palindrome_arr(input):
     arr = [0]*128
     for i in range(len(input)):
         ord_num = ord(input[i])
