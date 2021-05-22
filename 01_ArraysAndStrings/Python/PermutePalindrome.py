@@ -14,8 +14,6 @@ def is_permute_palindrome_arr(input):
             arr[ord_num] += 1
         elif arr[ord_num] == 1:
             arr[ord_num] -= 1
-        else:
-            raise ValueError 
     if sum(arr) == 0 or sum(arr) == 1:
         return True
     else:
