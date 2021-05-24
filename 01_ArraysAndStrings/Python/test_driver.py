@@ -7,6 +7,7 @@ from OneAway import oneway_dict
 from StringCompress import string_compress
 from RotateMatrix import rotate_matrix_with_degree
 from ZeroMatrix import *
+from StringRotate import is_rotate_string
 
 
 # Is Unique
@@ -214,3 +215,20 @@ class TestZeroMatrix():
 
     def test_zero_matrix_dict(self):
         assert list(map(zero_matrix_dict, self.input1)) == self.ans1
+
+
+# String Rotation
+class TestStringRotation:
+
+    def setup_method(self, method):
+        self.input1 = ["waterbottle", "canada", "helloworld", "", "", "hello", "a", "mcmaster", "mcmaster"]
+        self.input2 = ["erbottlewat", "canada", "worldlohel", "", "h", "hello", "a", "ermcmast", "masteral"]
+        self.ans1 = [True, True, False, True, False, True, True, True, False]
+
+    def teardown_method(self, method):
+        self.input1 = None
+        self.input2 = None
+        self.ans1 = None
+
+    def test_find_string_compression(self):
+        assert list(map(is_rotate_string, self.input1, self.input2)) == self.ans1
