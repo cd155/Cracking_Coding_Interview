@@ -10,14 +10,19 @@
         - String manipulation
         - Regular Expression
     - Questions
-        - Is Unique
-        - Check Permutation
-        - URLify
-        - Palindrome Permutation
-        - One Away
-        - String Compression
-        - Rotate Matrix
-        - Zero Matrix
-        - String Rotation
+        - Is Unique [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/IsUnique.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/IsUnique.py)
+        - Check Permutation [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/CheckPermutation.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/CheckPermutation.py)
+        - URLify [[Python]](https://duckduckgo.com)
+        - Palindrome Permutation [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/PermutePalindrome.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/PermutePalindrome.py)
+        - One Away [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/OneAway.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/OneAway.py)
+        - String Compression [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/StringCompress.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/StringCompress.py)
+        - Rotate Matrix [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/RotateMatrix.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/RotateMatrix.py)
+        - Zero Matrix [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/ZeroMatrix.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/ZeroMatrix.py)
+        - String Rotation [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/StringRotate.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/StringRotate.py)
 - Chapter Two: Linked Lists
     - Key Knowledge:
+        - Linked List
+        - Object
+        - Pointers
+    - Questions
+        - Remove Duplicates [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/RemoveDups.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/RemoveDups.py)
