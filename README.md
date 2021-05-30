@@ -1,4 +1,4 @@
-# Cracking the Coding Interview 
+# Cracking the Coding Interview Solutions in Jupyter Notebook
 - Practice on Literate Programming
 - Practice on Unit Test - in test_driver.py
 - Practice on White Box and Black Box Testing
