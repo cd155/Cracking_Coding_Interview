@@ -26,4 +26,15 @@
         - Object
         - Pointers
     - Questions
-        - Remove Duplicates [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/RemoveDups.ipynb)  [[Python]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/RemoveDups.py)
+        - Remove Duplicates [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/RemoveDups.ipynb)
+        - Return Kth to Last [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/ReturnKthToLast.ipynb)
+        - Delete Middle Node [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/DeleteMiddle.ipynb)
+        - Partition [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Partition.ipynb)
+        - Sum Lists [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/SumLists.ipynb)
+        - Palindrome [[NoteBook]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Palindrome.ipynb)
+        - Intersection [[NoteBook]]()
+        - Loop Detection [[NoteBook]]()
+- Chapter Three: Stacks and Queues
+    - Key Knowledge:
+        - Stack
+        - Queue
