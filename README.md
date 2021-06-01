@@ -25,7 +25,7 @@ Key Knowledge:
 
 ## Chapter Two: Linked Lists
 Key Knowledge:
-- Linked List
+- Linked List - [[LinkedList.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/LinkedList.ipynb)
 - Object
 - Pointers
 
