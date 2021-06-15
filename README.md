@@ -37,8 +37,8 @@ Key Knowledge:
 | 2.4 Partition | [[Partition.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Partition.ipynb) |
 | 2.5 Sum Lists | [[SumLists.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/SumLists.ipynb) |
 | 2.6 Palindrome | [[Palindrome.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Palindrome.ipynb) |
-| 2.7 Intersection | [[Intersection.ipynb]]() |
-| 2.8 Loop Detection | [[LoopDetection.ipynb]]() |
+| 2.7 Intersection | [[Intersection.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Intersection.ipynb) |
+| 2.8 Loop Detection | [[LoopDetection.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/LoopDetection.ipynb) |
 
 ## Chapter Three: Stacks and Queues
 Key Knowledge:
