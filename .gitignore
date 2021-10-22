@@ -3,3 +3,4 @@
 *.coverage
 *.ipynb_checkpoints*
 note.localignore
+.vscode/settings.json
