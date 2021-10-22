@@ -7,11 +7,11 @@ newtype Stack a = StackD [a] deriving (Show)
 new :: Stack a
 new = StackD []
 
--- Pop: take the top element out of the stack
+-- Pop: remove the top element on the stack
 -- Test: pop (push ("hi") (push ("world") (push ("!") new)))
-pop :: Stack a -> Maybe a
+pop :: Stack a -> Maybe (Stack a)
 pop (StackD []) = Nothing 
-pop (StackD (x : _)) = Just x
+pop (StackD (_ : y)) = Just (StackD y)
 
 -- Push: insert an element at the beginning of the stack
 -- Test: push ("hi") (push ("world") (push ("!") new))
