@@ -3,28 +3,27 @@ module Structure.Stack where
 newtype Stack a = StackD [a] deriving (Show)  
 
 -- Initialize: create a new Stack
--- Test: a = new
-new :: Stack a
-new = StackD []
+newStack :: Stack a
+newStack = StackD []
 
 -- Pop: remove the top element on the stack
--- Test: pop (push ("hi") (push ("world") (push ("!") new)))
+-- Test: pop (push "hi" (push "world" (push "!" newStack)))
 pop :: Stack a -> Maybe (Stack a)
 pop (StackD []) = Nothing 
 pop (StackD (_ : y)) = Just (StackD y)
 
 -- Push: insert an element at the beginning of the stack
--- Test: push ("hi") (push ("world") (push ("!") new))
+-- Test: push "hi" (push "world" (push "!" newStack))
 push :: a -> Stack a -> Stack a
 push a (StackD x) = StackD (a : x) 
 
 -- Peek: look up the first element of the stack
--- Test: peek (push ("world") (push ("!") new))
-peek :: Stack a -> Maybe a
-peek (StackD []) = Nothing
-peek (StackD (x : y)) = Just x
+-- Test: peekStack (push "world" (push "!" newStack))
+peekStack :: Stack a -> Maybe a
+peekStack (StackD []) = Nothing
+peekStack (StackD (x : y)) = Just x
 
 -- Is Empty: check whether the stack is empty
-isEmpty :: Stack a -> Bool
-isEmpty (StackD []) = True 
-isEmpty _ = False 
+isStackEmpty :: Stack a -> Bool
+isStackEmpty (StackD []) = True 
+isStackEmpty _ = False 
