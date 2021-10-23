@@ -3,8 +3,9 @@
 - Practice on Literate Programming
 - Practice on Unit Test - in test_driver.py
 - Practice on White Box and Black Box Testing
+- Practice on Functional Programming
 # Interview Questions
-## Chapter One: Arrays and String
+## Chapter One : Arrays and String (Jupyter Notebook, Unit Test)
 Key Knowledge:
 - Hash Table or Dictionary
 - Array, 1D and 2D
@@ -23,7 +24,7 @@ Key Knowledge:
 | 1.8 Zero Matrix | [[ZeroMatrix.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/ZeroMatrix.ipynb) | [[ZeroMatrix.py]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/ZeroMatrix.py) |
 | 1.9 String Rotation | [[StringRotate.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Notebook/StringRotate.ipynb) | [[StringRotate.py]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/01_ArraysAndStrings/Python/StringRotate.py) |
 
-## Chapter Two: Linked Lists
+## Chapter Two: Linked Lists (Jupyter Notebook)
 Key Knowledge:
 - Linked List - [[LinkedList.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/LinkedList.ipynb)
 - Object
@@ -40,7 +41,7 @@ Key Knowledge:
 | 2.7 Intersection | [[Intersection.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/Intersection.ipynb) |
 | 2.8 Loop Detection | [[LoopDetection.ipynb]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/02_LinkedLists/LoopDetection.ipynb) |
 
-## Chapter Three: Stacks and Queues
+## Chapter Three : Stacks and Queues (Haskell)
 Key Knowledge:
-- Stack
-- Queue
+- Stack [[Stack.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StacksAndQueues/Structure/Stack.hs)
+- Queue [[Queue.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StacksAndQueues/Structure/Queue.hs)
