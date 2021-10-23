@@ -1,4 +1,4 @@
-module Structure.Queue where
+module StacksAndQueues.Structure.Queue where
 
 newtype Queue a = QueueD [a] deriving (Show)  
 
