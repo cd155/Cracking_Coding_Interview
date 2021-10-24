@@ -3,9 +3,9 @@
     has a function min which returns the minimum element? 
     Push, pop and min should all operate in 0(1) time.
 -}
-module StacksAndQueues.StackMin where
+module StacksAndQueue.StackMin where
 
-import StacksAndQueues.Structure.Stack(Stack (StackD))
+import StackAndQueue.Structure.Stack(Stack (StackD))
 import Data.Maybe (fromJust)
 
 -- Pop: remove the top element on the stack
