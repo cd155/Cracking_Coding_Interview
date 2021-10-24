@@ -3,7 +3,7 @@
     has a function min which returns the minimum element? 
     Push, pop and min should all operate in 0(1) time.
 -}
-module StacksAndQueue.StackMin where
+module StackAndQueue.StackMin where
 
 import StackAndQueue.Structure.Stack(Stack (StackD))
 import Data.Maybe (fromJust)
