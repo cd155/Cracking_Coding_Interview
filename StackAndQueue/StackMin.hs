@@ -1,30 +1,58 @@
-{-
+{-  Question:
     How would you design a stack which, in addition to push and pop, 
     has a function min which returns the minimum element? 
     Push, pop and min should all operate in 0(1) time.
+
+    Pre-load: 
+    1   cd Cracking_Coding_Interview
+    2   :l StackAndQueue/StackMin.hs
+    3   :m StackAndQueue.Structure.Stack StackAndQueue.StackMin
 -}
 module StackAndQueue.StackMin where
 
 import StackAndQueue.Structure.Stack(Stack (StackD))
 import Data.Maybe (fromJust)
 
--- Pop: remove the top element on the stack
--- Test: pop (push "hi" (push "world" (push "!" newStack)))
-popMin :: (Ord a) => (Stack a, Maybe a, Maybe a) -> Maybe (Stack a, Maybe a, Maybe a)
-popMin (StackD _, Nothing, Nothing)    = Nothing
-popMin (StackD (x : y), a, Nothing)     = Just (StackD y, Nothing, Nothing)
-popMin (StackD (x : y), a, b)
-    | x <= fromJust a                   = Just (StackD y, Just x , a)
-    | x > fromJust a && x <= fromJust b = Just (StackD y, a , Just x)
-    | otherwise                         = Just (StackD y, a, b)
--- popMin (_, _, _)                     = Nothing
+-- Initialize: create a new Stack
+newStackMin :: (Stack a, Maybe a)
+newStackMin = (StackD [], Nothing)
 
--- Push: insert an element at the beginning of the stack
--- Test: push "hi" (push "world" (push "!" newStack))
-pushMin :: (Ord a) => a -> (Stack a, Maybe a, Maybe a) -> Maybe (Stack a, a, Maybe a)
-pushMin a (StackD x, Nothing, Nothing) = Just (StackD (a : x), a, Nothing)
-pushMin a (StackD x, b, Nothing)       = Just (StackD (a : x), min a (fromJust b), Just (max a (fromJust b)))
-pushMin a (StackD x, b, c)             
-    | a <= fromJust b                  = Just (StackD (a : x), a, b)
-    | a > fromJust b && a <= fromJust c = Just (StackD (a : x), fromJust b, Just a)
-    | otherwise                        = Just (StackD (a : x), fromJust b, c)
+-- Pop: remove the top element, return stack, first and second Min
+-- 2*fromJust a - x = 2*fromJust a - (2*a - fromJust b) = b
+{-
+    Original Stack [10,1,5]
+    a = pushMin 10 (pushMin 1 (pushMin 5 (newStackMin)))
+        ## (StackD [10,-3,5],    Just 1)
+    b = popMin a
+        ## ((StackD [-3,5],      Just 1),  Just 10)
+    c = popMin (fst b)
+        ## ((StackD [5],         Just 5),  Just 1)
+    d = popMin (fst c)
+        ## ((StackD [],          Nothing), Just 5)
+    e = popMin (fst d)
+        ## ((StackD [],          Nothing), Nothing)
+-}
+
+popMin :: (Num a, Ord a) => (Stack a, Maybe a) -> ((Stack a, Maybe a), Maybe a)
+popMin (StackD [], _)          = ((StackD [], Nothing), Nothing)
+popMin (StackD (x : y), a)
+    | null y                   = ((StackD y, Nothing), Just x)
+    | x < fromJust a           = ((StackD y, Just (2*fromJust a - x)), a)
+    | otherwise                = ((StackD y, a), Just x)
+
+-- Push: insert an element, return the stack, first and second Min
+{-  
+    Original Stack [10,1,5]
+    a = pushMin 10 (pushMin 1 (pushMin 5 (newStackMin)))
+        ## (StackD [10,-3,5],    Just 1)
+    pushMin (-1) a
+        ## (StackD [-3,10,-3,5], Just (-1))
+    pushMin 10 a
+        ## (StackD [10,10,-3,5], Just 1)
+-}
+
+pushMin :: (Num a, Ord a) => a -> (Stack a, Maybe a) -> (Stack a, Maybe a)
+pushMin a (StackD [], _)  = (StackD [a], Just a)
+pushMin a (StackD x, b)
+    | a < fromJust b      = (StackD ((2*a - fromJust b) : x), Just a)
+    | otherwise           = (StackD (a : x), b)
