@@ -43,8 +43,8 @@ Key Knowledge:
 
 ## Chapter Three : Stacks and Queues (Haskell)
 Key Knowledge:
-- Stack [[Stack.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StacksAndQueues/Structure/Stack.hs)
-- Queue [[Queue.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StacksAndQueues/Structure/Queue.hs)
+- Stack [[Stack.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StackAndQueue/Structure/Stack.hs)
+- Queue [[Queue.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StackAndQueue/Structure/Queue.hs)
 
 | Questions | Haskell |
 | :---        |:----:|
