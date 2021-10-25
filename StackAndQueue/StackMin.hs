@@ -51,6 +51,7 @@ popMin (StackD (x : y), a)
         ## (StackD [10,10,-3,5], Just 1)
 -}
 
+-- (Some relation (a,b)) < a, know a < b, to get 2a -b < a
 pushMin :: (Num a, Ord a) => a -> (Stack a, Maybe a) -> (Stack a, Maybe a)
 pushMin a (StackD [], _)  = (StackD [a], Just a)
 pushMin a (StackD x, b)
