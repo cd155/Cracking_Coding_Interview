@@ -8,9 +8,9 @@ newStack = StackD []
 
 -- Pop: remove the top element on the stack
 -- Test: pop (push "hi" (push "world" (push "!" newStack)))
-pop :: Stack a -> Maybe (Stack a)
-pop (StackD []) = Nothing 
-pop (StackD (_ : y)) = Just (StackD y)
+pop :: Stack a -> (Stack a, Maybe a)
+pop (StackD []) = (StackD [], Nothing)
+pop (StackD (x : y)) = (StackD y, Just x)
 
 -- Push: insert an element at the beginning of the stack
 -- Test: push "hi" (push "world" (push "!" newStack))
