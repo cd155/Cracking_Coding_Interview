@@ -13,9 +13,9 @@ add a (QueueD x) = QueueD (x ++ [a])
 
 -- Remove: remove an element at the top of the queue
 -- Test: remove (add "!" (add "world" (add "hi" newQueue)))
-remove :: Queue a -> Maybe (Queue a)
-remove (QueueD []) = Nothing
-remove (QueueD (x : y)) = Just (QueueD y)
+remove :: Queue a -> (Queue a, Maybe a)
+remove (QueueD []) = (QueueD [], Nothing)
+remove (QueueD (x : y)) = (QueueD y, Just x)
 
 -- Peek: check the first of element in the queue
 -- Test: peekQueue (add "!" (add "world" newQueue))
