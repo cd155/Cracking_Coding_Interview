@@ -38,7 +38,29 @@ makeSet :: Int -> StackSet a
 makeSet t = Plates [] t 0
 
 -- Pop: remove the top element on the stack
--- Test: pop (push "hi" (push "world" (push "!" newStack)))
+{-  Test:
+    a = pushSet 3 (pushSet 2 (pushSet 1 (makeSet 2)))
+        ##  Plates {_stackLists = [StackD [3],StackD [2,1]], 
+                    _threshold = 2, _counter = 1}
+    b = popSet a
+        ## (Plates {_stackLists = [StackD [2,1]], 
+                    _threshold = 2, _counter = 2},      Just 3)
+    c = pushSet 3 (fst b)
+        ##  Plates {_stackLists = [StackD [3],StackD [2,1]], 
+                    _threshold = 2, _counter = 1}
+    d = popSet (fst (popSet c))
+        ## (Plates {_stackLists = [StackD [1]], _threshold = 2, 
+                    _counter = 1},                      Just 2)
+    e = popSet (fst d)
+        ## (Plates {_stackLists = [], 
+                    _threshold = 2, _counter = 2},      Just 1)
+    f = popSet (fst e)
+        ## (Plates {_stackLists = [], 
+                    _threshold = 2, _counter = 0},      Nothing)
+    g = pushSet 1 (fst e)
+        ##  Plates {_stackLists = [StackD [1]], 
+                    _threshold = 2, _counter = 1}
+-}
 popSet :: StackSet a -> (StackSet a, Maybe a)
 popSet (Plates [] t _) = (Plates [] t 0, Nothing)
 popSet (Plates xs t c)= (makeNewPlt (Plates xs t c), snd (pop topStack))
@@ -53,7 +75,17 @@ makeNewPlt (Plates (x : xs) t c)
         where poppedStack = fst (pop x)
 
 -- Push: insert an element at the beginning of the stack
--- Test: pushSet 3 (pushSet 2 (pushSet 1 (makeSet 2)))
+{-  Test:
+    a = pushSet 3 (pushSet 2 (pushSet 1 (makeSet 2)))
+        ## Plates {_stackLists = [StackD [3],StackD [2,1]], 
+                   _threshold = 2, _counter = 1}
+    b = pushSet 4 a
+        ## Plates {_stackLists = [StackD [4,3],StackD [2,1]], 
+                   _threshold = 2, _counter = 2}
+    c = pushSet 5 b
+        ## Plates {_stackLists = [StackD [5],StackD [4,3],StackD [2,1]], 
+                   _threshold = 2, _counter = 1}
+-} 
 pushSet :: a -> StackSet a -> StackSet a
 pushSet a (Plates [] t _) = Plates [push a newStack] t 1
 pushSet a (Plates (x : xs) t c)
@@ -62,7 +94,6 @@ pushSet a (Plates (x : xs) t c)
     | otherwise                   = Plates (x : xs) t c
 
 -- Peek: look up the first element of the stack
--- Test: peekStack (pushSet 3 (pushSet 2 (pushSet 1 (makeSet 2))))
 peekSet :: StackSet a -> Maybe a
 peekSet (Plates [] _ _) = Nothing
 peekSet (Plates (x : _) _ _) = peekStack x
