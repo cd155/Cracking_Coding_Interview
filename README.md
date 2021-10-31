@@ -50,3 +50,4 @@ Key Knowledge:
 | :---        |:----:|
 | 3.1 Three in One | [[ThreeInOne.md]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StackAndQueue/ThreeInOne.md) |
 | 3.2 Stack Min | [[StackMin.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StackAndQueue/StackMin.hs) |
+| 3.3 Set Of Stacks | [[StackSet.hs]](https://github.com/cd155/Cracking_Coding_Interview/blob/master/StackAndQueue/StackSet.hs) |
