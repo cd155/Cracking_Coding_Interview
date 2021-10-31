@@ -61,15 +61,15 @@ makeSet t = Plates [] t 0
 -}
 popSet :: StackSet a -> (StackSet a, Maybe a)
 popSet (Plates [] t _) = (Plates [] t 0, Nothing)
-popSet (Plates xs t c)= (makeNewPlt (Plates xs t c), snd (pop topStack))
+popSet (Plates xs t c) = (makeNewPlt (Plates xs t c), snd (pop topStack))
         where topStack = head xs
 
 -- Helper function: remove empty stack from stackLists after pop
 makeNewPlt :: StackSet a -> StackSet a
-makeNewPlt (Plates [] t c)       = Plates [] t c
+makeNewPlt (Plates [] t c)          = Plates [] t c
 makeNewPlt (Plates (x : xs) t c)
-    | isStackEmpty poppedStack     = Plates xs t t
-    | otherwise                  = Plates (poppedStack : xs) t (c-1)
+    | isStackEmpty poppedStack      = Plates xs t t
+    | otherwise                     = Plates (poppedStack : xs) t (c-1)
         where poppedStack = fst (pop x)
 
 -- Push: insert an element at the beginning of the stack
@@ -85,7 +85,7 @@ makeNewPlt (Plates (x : xs) t c)
                    _threshold = 2, _counter = 1}
 -} 
 pushSet :: a -> StackSet a -> StackSet a
-pushSet a (Plates [] t _) = Plates [push a newStack] t 1
+pushSet a (Plates [] t _)         = Plates [push a newStack] t 1
 pushSet a (Plates (x : xs) t c)
     | c <  t                      = Plates (push a x : xs) t (c+1)
     | c >= t                      = Plates (push a newStack : (x : xs)) t (t-1)
@@ -93,10 +93,10 @@ pushSet a (Plates (x : xs) t c)
 
 -- Peek: look up the first element of the stack
 peekSet :: StackSet a -> Maybe a
-peekSet (Plates [] _ _) = Nothing
+peekSet (Plates [] _ _)      = Nothing
 peekSet (Plates (x : _) _ _) = peekStack x
 
 -- Is Empty: check whether the stack is empty
 isSetEmpty :: StackSet a -> Bool
-isSetEmpty (Plates [] _ _) = True
+isSetEmpty (Plates [] _ _)      = True
 isSetEmpty (Plates (x : _) _ _) = isStackEmpty x
