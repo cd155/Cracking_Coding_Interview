@@ -35,10 +35,10 @@ newStackMin = (StackD [], Nothing)
 
 popMin :: (Num a, Ord a) => (Stack a, Maybe a) -> ((Stack a, Maybe a), Maybe a)
 popMin (StackD [], _)          = ((StackD [], Nothing), Nothing)
-popMin (StackD (x : y), a)
-    | null y                   = ((StackD y, Nothing), Just x)
-    | x < fromJust a           = ((StackD y, Just (2*fromJust a - x)), a)
-    | otherwise                = ((StackD y, a), Just x)
+popMin (StackD (x : xs), a)
+    | null xs                  = ((StackD xs, Nothing), Just x)
+    | x < fromJust a           = ((StackD xs, Just (2*fromJust a - x)), a)
+    | otherwise                = ((StackD xs, a), Just x)
 
 -- Push: insert an element, return the stack, first and second Min
 {-  
