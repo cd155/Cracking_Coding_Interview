@@ -24,8 +24,6 @@
 module StackAndQueue.StackSet where
 
 import StackAndQueue.Structure.Stack
-    ( isStackEmpty, newStack, peekStack, pop, push, Stack )
-import Data.Maybe ()
 
 data StackSet a = Plates{
                             _stackLists :: [Stack a],
