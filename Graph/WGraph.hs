@@ -23,25 +23,22 @@ data Vertex = One
             | Eight
             deriving (Eq, Ord)
 
-type Path v = [(v, v)]
+type Path v = [v]
 type Weight = Int
 
 isPath :: WGraph -> Path Vertex -> Bool
-isPath g p = all (isEdge g) (pairs p) 
+isPath g [] = False
+isPath g p = all (isEdge g) (pairs p)
 
--- how to deal with a broken path? 
--- broken path valid path at first couple seq, but not all seq
-pairs :: Path Vertex -> Path Vertex
+pairs :: [a] -> [(a, a)]
 pairs [] = []
-pairs [x] = [x]
-pairs ((x1, y1): (x2, y2):xs) = 
-  if y1 == x2 
-    then 
-    (x1, y1): pairs((x2, y2):xs) 
-    else []
-
--- pairs :: [a] -> [(a, a)]
--- pairs _ =  
+pairs [x] = []
+pairs (x1:x2:xs) = (x1, x2): pairs (x2:xs)
 
 isEdge :: WGraph -> (Vertex,Vertex) -> Bool
 isEdge g e = e `Map.member` wEdges g
+
+-- totalWeight :: WGraph -> Path Vertex -> Weight
+-- totalWeight g p = Map.foldrWithKey f 0 (wEdges g)
+--   where f (x, y) w ks = 0 + k:ks
+--         path = pairs p
