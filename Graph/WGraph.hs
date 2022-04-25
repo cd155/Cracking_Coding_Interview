@@ -38,7 +38,8 @@ pairs (x1:x2:xs) = (x1, x2): pairs (x2:xs)
 isEdge :: WGraph -> (Vertex,Vertex) -> Bool
 isEdge g e = e `Map.member` wEdges g
 
--- totalWeight :: WGraph -> Path Vertex -> Weight
--- totalWeight g p = Map.foldrWithKey f 0 (wEdges g)
---   where f (x, y) w ks = 0 + k:ks
---         path = pairs p
+totalWeight :: WGraph -> Path Vertex -> Weight
+totalWeight g p = sum $ map (wEdges g Map.!) $ pairs p
+
+-- test :: Map (Vertex, Vertex) Weight -> [(Vertex, Vertex)] -> [Weight]
+-- test g p = map (g Map.!) p
