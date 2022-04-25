@@ -6,6 +6,7 @@ newtype Graph = G (Set Vertex, Set Edge)
 
 newtype WGraph = WG (Set Vertex,  Set WEdge)
 
+-- Declaration: WGraphT : set ❰ set t , ❰ t, t ❱ ↔ ℝ ❱It s
 newtype WGraphSet = WGS (Set (Set Vertex, Set WEdge))
 
 data Vertex = One
@@ -21,7 +22,6 @@ data Vertex = One
 -- Declaration: WGraphT : set ❰ set t , ❰ t, t ❱ ↔ ℝ ❱
 newtype Edge = E (Vertex, Vertex) deriving (Eq, Ord)
 
--- Declaration: WGraphT : set ❰ set t , ❰ t, t ❱ ↔ ℝ ❱It s
 newtype WEdge = WE ((Vertex, Vertex), Int) deriving (Eq, Ord)
 
 -- Declaration: isPath : ❰ set t, set ❰ t, t ❱ ❱ → Seq ❰ t, t ❱ → 𝔹
@@ -68,5 +68,5 @@ isWPathValid (WG (v, e)) (x:xs) = x `member` e && isWPath (WG (v, e)) (x:xs)
 -- findShortestPath (Simple2 v e) = powerSet([])
 
 -- Declaration: Paths : ❰ set t, set ❰ t, ℝ, t ❱ ❱ → set (Seq ❰ t, ℝ, t ❱)
-allPaths :: WGraph -> Set [Edge]
-allPaths (WG (v, e)) =  (WG(v, e)) `member` WGraphSet -- stop here.
+-- allPaths :: WGraph -> Set [Edge]
+-- allPaths (WG (v, e)) =  (WG(v, e)) `member` WGraphSet -- stop here.
