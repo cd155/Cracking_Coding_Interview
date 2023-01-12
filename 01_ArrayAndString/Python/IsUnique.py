@@ -5,12 +5,12 @@
 
 
 def is_unique_dict(inputs):
-    d = {}
+    arr = []
     for cha in inputs:
-        if cha in d:
+        if cha in arr:
             return False
         else:
-            d[cha] = 0
+            arr.append(cha)
     return True
 
 def is_unique_arr(inputs):
