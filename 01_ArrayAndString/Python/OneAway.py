@@ -8,7 +8,7 @@
 
 from CheckPermutation import convToDict
 
-# give two string, return a bool
+# Determine one edit character base on the updated dictionary
 def oneway_dict(s1, s2):
     ysValue = updateYsDict(s2, convToDict(s1, {}))
     oneEdits = [ele for ele in ysValue if ele in [1,-1]]
@@ -23,7 +23,7 @@ def oneway_dict(s1, s2):
     else:
         return False
 
-# give a string, return updated dict.values()
+# Return updated dict values base on input and existed dict
 def updateYsDict(s, dict):
     for ele in s:
         if ele in dict:
