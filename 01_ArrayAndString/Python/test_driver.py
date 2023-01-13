@@ -4,7 +4,7 @@ from CheckPermutation import *
 from URLify import replace_spaces_expression
 from PermutePalindrome import is_permute_palindrome_arr, isPermPalinDict
 from OneAway import oneway_dict
-from StringCompress import string_compress
+from StringCompress import string_compress, compreStr
 from RotateMatrix import rotate_matrix_with_degree
 from ZeroMatrix import *
 from StringRotate import is_rotate_string
@@ -126,6 +126,8 @@ class TestFindStringCompression:
     def test_find_string_compression(self):
         assert list(map(string_compress, self.input1)) == self.ans1
 
+    def testCompreStr(self):
+        assert list(map(compreStr, self.input1)) == self.ans1
 
 # Rotate Matrix
 class TestRotateMatrix():

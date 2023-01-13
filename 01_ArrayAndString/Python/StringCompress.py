@@ -9,6 +9,7 @@
 # the string has only uppercase and lowercase letters (a - z).
 
 
+# pointer version
 def string_compress(input1):
     if len(input1) == 0 :
         return "" 
@@ -31,3 +32,25 @@ class node:
     def __init__(self, name):
         self.name = name
         self.count = 1
+
+# 1. put the same char in a buffer list, 
+# 2. if different ele in, write string, release buffer
+# 3. rebuild buffer base on step 1
+def compreStr(s):
+    newS = ""
+    holder = []
+
+    for ele in s:
+        print(ele, holder)
+        if (len(holder) == 0):
+            holder = [ele]
+        elif (holder[0] == ele):
+            holder.append(ele)
+        else:
+            newS = newS + holder[0] + str(len(holder))
+            holder = [ele]
+
+    if len(holder) != 0:
+        newS = newS + holder[0] + str(len(holder))
+
+    return newS
