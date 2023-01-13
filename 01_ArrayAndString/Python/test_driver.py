@@ -2,7 +2,7 @@ from pytest import *
 from IsUnique import *
 from CheckPermutation import *
 from URLify import replace_spaces_expression
-from PermutePalindrome import is_permute_palindrome_arr
+from PermutePalindrome import is_permute_palindrome_arr, isPermPalinDict
 from OneAway import oneway_dict
 from StringCompress import string_compress
 from RotateMatrix import rotate_matrix_with_degree
@@ -92,7 +92,8 @@ class TestCheckPermutationOfPalindrome:
     def test_check_permutation_of_palindrome(self):
         assert list(map(is_permute_palindrome_arr, self.input1)) == self.ans1
 
-
+    def testIsPermPalinDict(self):
+        assert list(map(isPermPalinDict, self.input1)) == self.ans1
 # One Away
 class TestFindIfOneEditAway:
 
