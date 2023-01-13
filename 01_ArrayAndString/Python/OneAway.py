@@ -1,44 +1,33 @@
 # # One Edit Away 
 # 
-#     There are three types of edits that can be performed on strings: 
+# There are three types of edits that can be performed on strings: 
+# insert a character, remove a character, or replace a character. 
 #     
-#     insert a character, remove a character, or replace a character. 
-#     
-#     Given two strings, write a function to check if they are one edit (or zero edits) away.
+# Given two strings, write a function to check if they are one edit 
+# (or zero edits) away.
 
+from CheckPermutation import convToDict
 
-def oneway_dict(input1, input2):
-    inorder_arr = inputs_inorder(input1, input2)
-    long_input = inorder_arr[0]
-    short_input = inorder_arr[1]
-    
-    arr_dict = [0]*128
-    
-    for char in long_input:
-        char_num = ord(char)
-        arr_dict[char_num] += 1
-    
-    for char in short_input:
-        char_num = ord(char)
-        arr_dict[char_num] -= 1
-    
-    edit_arr = [item for item in arr_dict if item != 0]
-        
-    if len(edit_arr) == 0:
-        return True
-    elif len(edit_arr) == 1 and edit_arr[0] == 1:
-        return True
-    elif len(edit_arr) == 2 and -1 in edit_arr and 1 in edit_arr:
+# give two string, return a bool
+def oneway_dict(s1, s2):
+    ysValue = updateYsDict(s2, convToDict(s1, {}))
+    oneEdits = [ele for ele in ysValue if ele in [1,-1]]
+
+    if (any([ele for ele in ysValue if ele<-1])) or \
+       (any([ele for ele in ysValue if ele>1])):
+        return False
+    elif (len(oneEdits) > 2):
+        return False
+    elif (sum(ysValue) in [0,1,-1]):
         return True
     else:
         return False
 
-def inputs_inorder(input1, input2):
-    inorder_arr = []
-    if len(input1) > len(input2):
-        inorder_arr.append(input1)
-        inorder_arr.append(input2)
-    else:
-        inorder_arr.append(input2)
-        inorder_arr.append(input1)
-    return inorder_arr
+# give a string, return updated dict.values()
+def updateYsDict(s, dict):
+    for ele in s:
+        if ele in dict:
+            dict[ele] -= 1
+        else:
+            dict[ele] = -1
+    return (dict.values())
