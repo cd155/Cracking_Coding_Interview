@@ -10,8 +10,8 @@
 
 # Solution1: Use regular expression
 
-import re
 
+import re
 
 def replace_spaces_expression(input_string):
 
@@ -25,3 +25,18 @@ def replace_spaces_expression(input_string):
     match_pattern = '([^ ]*) +'
     replacement_pattern = r'\g<1>%20'
     return re.sub(match_pattern, replacement_pattern, input_string)
+
+# tracking the previous character
+def repSpace(s):
+    isSpaPre = False
+    newS = ""
+
+    for ele in s:
+        if ele == " " and not isSpaPre: 
+            newS += "20%"
+            isSpaPre = True
+        elif ele != " ":
+            newS += ele
+            isSpaPre = False
+
+    return newS
