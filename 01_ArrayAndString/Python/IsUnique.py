@@ -1,9 +1,9 @@
 # # Is Unique: 
-#     Implement an algorithm to determine if a string has all unique characters. 
-#     
-#     What if you cannot use additional data structures?
+# Implement an algorithm to determine if a string has all unique 
+# characters. What if you cannot use additional data structures?
 
 
+# check uniqueness with array
 def is_unique_dict(inputs):
     arr = []
     for cha in inputs:
@@ -13,6 +13,7 @@ def is_unique_dict(inputs):
             arr.append(cha)
     return True
 
+# check uniqueness with array version dictionary
 def is_unique_arr(inputs):
     arr = [False]*128
     for cha in inputs:
@@ -22,6 +23,7 @@ def is_unique_arr(inputs):
             arr[ord(cha)] = True
     return True
 
+# check uniqueness with bit
 def is_unique_bit(inputs):
     checker = 0
     for cha in inputs:
