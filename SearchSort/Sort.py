@@ -1,3 +1,5 @@
+from library import *
+
 """ 
     Bubble sort
 
@@ -30,7 +32,31 @@ def bsInOnePass(arr):
 
 """
     Radix  sort: sort each digits until all digits be sorted
+
+    1. find the length
+    2. reformat elements with the length, 
+       ex if length = 3, then 1 => 001.
+    3. Put them in to dictionary, base index incrementally
+    4. Sort the keys, create a new list
+    5. repeat step 3 until length times
 """
+
+# Assume Step 1 and 2 be completed
+def radixSortHelper(arr, len):
+    for i in reversed(range(0,len)):
+        # print(newArr)
+        newDic = convToDictBaseIndex(arr,{},i)
+        arr = rebuildArr(newDic)
+    return arr
+
+# rebuild 
+def rebuildArr(dic):
+    newArr = []
+    sortedKeys = list(dic.keys())
+    sortedKeys.sort()
+    for key in sortedKeys:
+        newArr.extend(dic[key])
+    return newArr
 
 # quick  sort (aka pivot sort)
 # merge  sort
