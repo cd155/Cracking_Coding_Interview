@@ -31,8 +31,12 @@ class TestSorting:
         self.input1 = None
         self.ans1 = None
 
-    def test_sorting(self):
+    def testBufferSort(self):
         assert list(map(bufferSort, self.input1)) == self.ans1
+    
+    def testQuickSort(self):
+        assert list(map(quickSort,  self.input1)) == self.ans1
+
 
 # Test Radix Sorting with formatted inputs
 class TestRadixSorting:

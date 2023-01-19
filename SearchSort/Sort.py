@@ -31,13 +31,12 @@ def bsInOnePass(arr):
     return arr
 
 """
-    Radix  sort: sort each digits until all digits be sorted
+    Radix sort: sort each digits until all digits be sorted
 
     1. find the length
-    2. reformat elements with the length, 
-       ex if length = 3, then 1 => 001.
-    3. Put them in to dictionary, base index incrementally
-    4. Sort the keys, create a new list
+    2. reformat elements with the length, ex if length = 3, then 1 => 001.
+    3. put them in to dictionary, base index incrementally
+    4. sort the keys, create a new list
     5. repeat step 3 until length times
 """
 
@@ -58,7 +57,43 @@ def rebuildArr(dic):
         newArr.extend(dic[key])
     return newArr
 
-# quick  sort (aka pivot sort)
+"""
+    quick sort (aka pivot sort)
+
+    1. select a pivot 
+    2. move everything smaller than the pivot to the left 
+    3. move everything great than  the pivot to the right 
+    4. position pivot(s) in the middle 
+    5. repeat steps for its left and right
+"""
+
+def quickSort(arr):
+    if len(arr) < 2:
+        return arr
+
+    mid = int(len(arr)/2)
+    newParti = qsHelper(arr,mid)
+    left = quickSort(newParti[0])
+    right = quickSort(newParti[2])
+
+    return left + newParti[1] + right
+
+# move elements left and right
+def qsHelper(arr, mid):
+    left = []
+    right = []
+    med = []
+
+    for i in range(0, len(arr)):
+        if arr[i] < arr[mid]:
+            left.append(arr[i])
+        elif arr[i] > arr[mid]:
+            right.append(arr[i])
+        else:
+            med.append(arr[i])
+
+    return [left,med,right]
+
 # merge  sort
 # heap   sort
 
